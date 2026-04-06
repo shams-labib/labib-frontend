@@ -55,7 +55,7 @@ export default function CourseCurriculum() {
 
   return (
     <section className="bg-white dark:bg-background py-20 px-4 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <Animation delay={0.1}>

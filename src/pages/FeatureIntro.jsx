@@ -20,9 +20,9 @@ export default function FeatureIntro() {
         ref={sectionRef}
         className="bg-white dark:bg-background py-16 md:py-24 transition-colors duration-300 overflow-hidden"
       >
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-            {/* --- LEFT SIDE: IMAGE (Hidden on Mobile) --- */}
+            {/* Left side image added */}
             <div
               ref={leftRef}
               className="hidden lg:block lg:col-span-5 relative min-h-[550px] rounded-[32px] overflow-hidden shadow-2xl border border-neutral-200 dark:border-neutral-800"
@@ -36,7 +36,7 @@ export default function FeatureIntro() {
               />
             </div>
 
-            {/* --- RIGHT SIDE: CONTENT CARD --- */}
+            {/* Right side image added */}
             <div
               ref={rightRef}
               className="lg:col-span-7 bg-neutral-100 dark:bg-neutral-950 rounded-[32px] p-8 md:p-12 flex flex-col justify-between relative overflow-hidden border border-neutral-200 dark:border-neutral-800 shadow-2xl"

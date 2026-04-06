@@ -32,7 +32,7 @@ export default function StruggleSection() {
     <Animation>
       <section className="relative w-full bg-background py-16 md:py-24 transition-colors duration-300">
         <div className="container mx-auto px-4 text-center">
-          {/* --- BADGE --- */}
+          {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 mb-8">
             <span className="size-1.5 rounded-full bg-primary-500 shadow-[0_0_8px_var(--color-primary-500)]" />
             <p className="text-[10px] font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest">
@@ -40,7 +40,7 @@ export default function StruggleSection() {
             </p>
           </div>
 
-          {/* --- HEADLINE --- */}
+          {/* Headline */}
           <h2 className="max-w-[900px] mx-auto text-2xl md:text-5xl font-bold tracking-tight leading-[1.2] mb-12 px-2">
             <span className="text-foreground">
               If you struggle to focus, feel overwhelmed by endless tasks, or
@@ -51,7 +51,7 @@ export default function StruggleSection() {
             </span>
           </h2>
 
-          {/* --- ALWAYS 3 COLUMNS GRID (Mobile & Desktop) --- */}
+          {/* Grid use */}
 
           <div className="max-w-[320px] sm:max-w-[600px] md:max-w-[750px] mx-auto">
             <div className="grid grid-cols-3 gap-3 md:gap-6">
