@@ -1,34 +1,90 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useLayoutEffect, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+/**
+ * Register GSAP Plugins
+ */
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function Animation({ children, delay = 0, y = 30 }) {
-  const elRef = useRef(null);
+/**
+ * Global Utility for Smooth Scrolling
+ * URL hash clutter avoid korar jonno exported function
+ */
+export const scrollToSection = (id, offset = 80) => {
+  const element = document.getElementById(id);
+  if (element) {
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
 
-  useEffect(() => {
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }
+};
+
+// Next.js SSR safe useLayoutEffect
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
+export default function Animation({
+  children,
+  delay = 0,
+  y = 40, // Slide up distance
+  x = 0, // Side slide distance (optional)
+  scale = 1, // Zoom effect (optional)
+  duration = 1,
+  start = "top 90%",
+  className = "",
+}) {
+  const elementRef = useRef(null);
+
+  useIsomorphicLayoutEffect(() => {
+    const el = elementRef.current;
+
     const ctx = gsap.context(() => {
-      gsap.from(elRef.current, {
+      // Step 1: Set initial hidden state (No Blur used here)
+      gsap.set(el, {
         opacity: 0,
         y: y,
-        duration: 1,
+        x: x,
+        scale: scale,
+        visibility: "hidden",
+      });
+
+      // Step 2: Smooth transition to original position
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        x: 0,
+        scale: 1,
+        visibility: "visible",
+        duration: duration,
         delay: delay,
-        ease: "power2.out",
+        ease: "power3.out", // High-end smooth easing
         scrollTrigger: {
-          trigger: elRef.current,
-          start: "top 90%",
+          trigger: el,
+          start: start,
           toggleActions: "play none none none",
         },
       });
-    }, elRef);
+    }, elementRef);
 
     return () => ctx.revert();
-  }, [delay, y]);
+  }, [delay, y, x, scale, duration, start]);
 
-  return <div ref={elRef}>{children}</div>;
+  return (
+    <div
+      ref={elementRef}
+      className={`w-full ${className}`}
+      style={{ opacity: 0, visibility: "hidden" }} // Prevent initial flash
+    >
+      {children}
+    </div>
+  );
 }
