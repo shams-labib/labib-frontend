@@ -51,9 +51,11 @@ export default function Navbar() {
 
           <div className="flex items-center gap-3">
             <ThemeToggle />
-            <Button className="hidden sm:block bg-primary-500 hover:bg-primary-600 text-white px-6 py-5 rounded-xl font-semibold transition-all active:scale-95">
+            <Button className="hidden sm:flex items-center justify-center bg-primary-500 hover:bg-primary-600 text-white px-6 h-10 rounded-xl font-semibold transition-all active:scale-95">
               Enroll now
             </Button>
+
+            {/* Mobile Trigger */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden p-2 text-neutral-600 dark:text-neutral-300"
