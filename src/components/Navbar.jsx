@@ -50,7 +50,7 @@ export default function Navbar() {
             <ThemeToggle />
 
             <div className="hidden sm:block">
-              <Button className="bg-primary-500 hover:bg-primary-600 text-white px-6 rounded-xl font-semibold transition-all active:scale-95">
+              <Button className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-5 rounded-xl font-semibold transition-all active:scale-95  ">
                 Enroll now
               </Button>
             </div>
@@ -83,7 +83,7 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Button className="w-full bg-primary-500 hover:bg-primary-600 text-white rounded-xl font-semibold sm:hidden">
+            <Button className="w-full bg-primary-500 hover:bg-primary-600 text-white rounded-xl font-semibold sm:hidden ">
               Enroll now
             </Button>
           </div>

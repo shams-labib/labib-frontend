@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <Animation>
       <section className="relative w-full overflow-hidden bg-background pt-20 pb-24 md:pt-32 md:pb-40">
-        {/* Background Glow  */}
+        {/* Background Glow */}
         <div
           className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[140%] h-[600px] 
                      bg-[radial-gradient(ellipse_at_bottom,_var(--color-primary-900)_0%,_transparent_60%)] 
