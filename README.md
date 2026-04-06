@@ -3,6 +3,7 @@
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0-blue?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![GSAP](https://img.shields.io/badge/GSAP-Animation-green?style=for-the-badge)](https://greensock.com/gsap/)
+[![Shadcn UI](https://img.shields.io/badge/Shadcn_UI-Components-black?style=for-the-badge&logo=shadcnui)](https://ui.shadcn.com/)
 
 A premium, high-converting landing page for **The Deep Work Blueprint** course. Designed with a "Premium Dark" aesthetic, featuring glassmorphism, smooth GSAP animations, and a focus on user experience to master focus and productivity.
 
@@ -85,3 +86,4 @@ Shams All Labib Frontend & Full-Stack Web Developer
 LinkedIn | Portfolio | Email
 
 Created with ❤️ for high-performance learning.
+```
