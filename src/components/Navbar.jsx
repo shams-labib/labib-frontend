@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
-// Logic import korlam
 import { scrollToSection } from "@/components/shared/Animation";
 
 const navLinks = [
@@ -19,7 +18,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleNavClick = (id) => {
-    scrollToSection(id); // Exported logic call korlam
+    // For smootth animation
+    scrollToSection(id);
     setIsOpen(false);
   };
 
@@ -42,7 +42,7 @@ export default function Navbar() {
               <button
                 key={link.id}
                 onClick={() => handleNavClick(link.id)}
-                className="text-sm font-medium text-neutral-500 hover:text-primary-500 transition-colors duration-200"
+                className="text-sm font-medium text-neutral-500 hover:text-primary-500 transition-colors duration-200 cursor-pointer"
               >
                 {link.name}
               </button>
